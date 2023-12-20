@@ -26,6 +26,9 @@
     margin-left: 2rem;
     font-size: 1rem;
 }
+.color{
+    background-color: aqua;
+}
 .form-input input,
 button {
     border: none;

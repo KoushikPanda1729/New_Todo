@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1 className='heading'>Todo App <span className='time'>Time: {newDate}</span></h1>
+      <h1 className='heading color'>Todo App <span className='time'>Time: {newDate}</span></h1>
       <TodoForm addTodo={addTodo} />
       {todos.map(todo => <Todo {...todo} key={todo.id} toggleChange={toggleChange} removeTodo={removeTodo} />)}
       <ToastContainer />
