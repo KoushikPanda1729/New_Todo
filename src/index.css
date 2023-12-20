@@ -47,6 +47,7 @@ button {
     background-color: black;
     color: white;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .todo {
