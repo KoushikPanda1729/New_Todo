@@ -12,7 +12,7 @@ const getLocalTodo = () => {
 
   if (todo) {
     return JSON.parse(localStorage.getItem('todo'))
-  }else{
+  } else {
     return [];
   }
 }
@@ -30,6 +30,19 @@ function App() {
           return { ...todo, status: !todo.status }
         } else {
           return todo;
+        }
+      })
+    })
+  }
+
+  const updateTodo = (updateValue, id) => {
+    console.log(id);
+    setTodos(prev => {
+      return prev.map(todo => {
+        if (todo.id === id) {
+          return { ...todo, title: updateValue }
+        } else {
+          return todo
         }
       })
     })
@@ -53,7 +66,7 @@ function App() {
     <div className='container'>
       <h1 className='heading color'>Todo App <span className='time'>Time: {newDate}</span></h1>
       <TodoForm addTodo={addTodo} />
-      {todos.map(todo => <Todo {...todo} key={todo.id} toggleChange={toggleChange} removeTodo={removeTodo} />)}
+      {todos.map(todo => <Todo {...todo} key={todo.id} toggleChange={toggleChange} removeTodo={removeTodo} updateTodo={updateTodo} />)}
       <ToastContainer />
     </div>
   )
